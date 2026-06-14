@@ -25,6 +25,21 @@ AI-powered command center for managing youth ice cream sellers distributing via 
 | Maps | OpenStreetMap via Leaflet (no API key required) |
 | AI | Statistical ML engine for predictions & recommendations |
 
+## Deploy Online (Public Link for Everyone)
+
+**Get a live URL anyone can open from anywhere.**
+
+### Fastest path (5 minutes after GitHub push)
+
+1. Push this project to GitHub (see `DEPLOY.md`)
+2. Double-click **`DEPLOY-ONLINE.bat`** or go to [Render Blueprint](https://dashboard.render.com/select-repo?type=blueprint)
+3. Connect your GitHub repo → Click **Apply**
+4. Wait 5–8 minutes → open your live URL
+
+**Login:** `admin@icecream.com` / `admin123`
+
+Full instructions: **[DEPLOY.md](./DEPLOY.md)**
+
 ## Office Presentation (One Link)
 
 **Best for presenting at office on any laptop.**
