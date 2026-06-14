@@ -1,0 +1,24 @@
+OFFICE PRESENTATION - ONE LINK SETUP
+=====================================
+
+HOW TO START (on office laptop):
+  1. Install Node.js from https://nodejs.org (LTS) - one time only
+  2. Double-click: START-PRESENTATION.bat
+  3. Wait until you see "ICE CREAM CONTROL CENTER - READY"
+
+ONE LINK FOR EVERYONE:
+  You (presenter):     http://localhost:5000
+  Colleagues (WiFi):   http://YOUR-IP:5000  (shown in the black window)
+
+LOGIN:
+  Email:    admin@icecream.com
+  Password: admin123
+
+IMPORTANT:
+  - Keep the black window open during presentation
+  - Colleagues must be on same office WiFi
+  - Click "Allow" if Windows Firewall asks
+  - First run takes 2-3 minutes (downloads data)
+
+COPY FOLDER TO OFFICE:
+  Copy this entire "ice-cream-control-center" folder via USB or cloud

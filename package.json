@@ -1,0 +1,27 @@
+{
+  "name": "ice-cream-control-center",
+  "version": "1.0.0",
+  "description": "AI-powered Ice Cream Distribution Control Center",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:memory": "concurrently \"npm run dev:server:memory\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:server:memory": "cd server && npm run dev:memory",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
+    "start": "cd server && node src/index.js",
+    "start:prod": "npm run build && cd server && cross-env NODE_ENV=production USE_MEMORY_DB=true node src/index.js",
+    "present": "npm run build && cd server && npm run start:present",
+    "deploy:render": "echo Push to GitHub then connect at https://dashboard.render.com/select-repo?type=blueprint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: icecream-control-center
+    runtime: node
+    plan: free
+    buildCommand: npm install && cd server && npm install && cd ../client && npm install && cd .. && npm run build
+    startCommand: cd server && node src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_MEMORY_DB
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: HOST
+        value: 0.0.0.0

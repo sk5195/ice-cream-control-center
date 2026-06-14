@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: icecream-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: icecream_control
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: icecream-server
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongodb:27017/icecream_control
+      - JWT_SECRET=your-production-jwt-secret-change-me
+      - CLIENT_URL=http://localhost:5173
+    depends_on:
+      - mongodb
+    volumes:
+      - ./server/uploads:/app/uploads
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: icecream-client
+    ports:
+      - "5173:80"
+    depends_on:
+      - server
+
+volumes:
+  mongodb_data:
