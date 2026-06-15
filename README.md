@@ -127,9 +127,9 @@ docker-compose up -d
 | `GET /api/ai/flavor-intelligence` | AI flavor analysis |
 | `GET /api/ai/predictions` | Demand predictions |
 | `GET /api/inventory` | Product inventory |
-| `GET /api/refrigerator/reports` | Cooling reports |
+| `GET /api/refrigerator` | Cooling reports |
 | `GET /api/reports/:type` | Generate reports |
-| `GET /api/reports/:type/download` | PDF/Excel download |
+| `GET /api/reports/:type/download/:format` | PDF/Excel download (`format` = `pdf` or `excel`) |
 
 ## Project Structure
 

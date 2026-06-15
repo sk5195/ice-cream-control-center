@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "npm install && cd server && npm install && cd ../client && npm install && cd .. && npm run build",
-  "env": {
-    "NODE_ENV": "production",
-    "USE_MEMORY_DB": "true",
-    "HOST": "0.0.0.0"
-  }
-}
