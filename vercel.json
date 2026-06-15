@@ -3,15 +3,9 @@
   "buildCommand": "npm install && cd server && npm install && cd ../client && npm install && cd .. && npm run build",
   "devCommand": "npm run dev",
   "env": {
-    "NODE_ENV": {
-      "default": "production"
-    },
-    "USE_MEMORY_DB": {
-      "default": "true"
-    },
-    "HOST": {
-      "default": "0.0.0.0"
-    }
+    "NODE_ENV": "production",
+    "USE_MEMORY_DB": "true",
+    "HOST": "0.0.0.0"
   },
   "functions": {
     "server/src/index.js": {
