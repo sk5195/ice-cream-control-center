@@ -1,4 +1,5 @@
 import express from 'express';
+import 'express-async-errors';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { createServer } from 'http';
@@ -25,6 +26,11 @@ import User from './models/User.js';
 import { runSeed } from './seed/seedData.js';
 
 dotenv.config();
+
+if (!process.env.JWT_SECRET) {
+  process.env.JWT_SECRET = 'icecream-dev-insecure-jwt-secret-set-JWT_SECRET-in-production';
+  console.warn('WARNING: JWT_SECRET is not set. Using an insecure default. Set JWT_SECRET in your environment for production.');
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
