@@ -25,8 +25,11 @@ const connectDB = async () => {
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`MongoDB Error: ${error.message}`);
-    if (!useMemory) {
-      console.warn('Falling back to in-memory MongoDB so the app can still start.');
+    // Only fall back to a throwaway in-memory DB in non-production. In production
+    // a configured database that is unreachable must fail loudly rather than
+    // silently serving (and seeding) demo data over the real data.
+    if (!useMemory && process.env.NODE_ENV !== 'production') {
+      console.warn('Falling back to in-memory MongoDB so the app can still start (development only).');
       uri = await startMemoryServer();
       const conn = await mongoose.connect(uri);
       console.log(`MongoDB Connected: ${conn.connection.host}`);
