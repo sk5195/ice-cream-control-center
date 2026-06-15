@@ -1,7 +1,6 @@
 {
   "version": 2,
   "buildCommand": "npm install && cd server && npm install && cd ../client && npm install && cd .. && npm run build",
-  "startCommand": "cd server && node src/index.js",
   "env": {
     "NODE_ENV": "production",
     "USE_MEMORY_DB": "true",
